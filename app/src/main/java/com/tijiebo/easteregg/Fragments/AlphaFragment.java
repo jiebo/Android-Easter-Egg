@@ -4,24 +4,25 @@ import android.animation.Animator;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.View;
-import android.view.animation.LinearInterpolator;
+import android.view.animation.AccelerateDecelerateInterpolator;
 
-public class RotateFragment extends BaseFragment {
+public class AlphaFragment extends BaseFragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        description.setText("Wanted to add this effect to one of our form icons. Don't forget to set the rotation back to 0");
-        code.setText("animate().rotation(360)");
+        description.setText("Fade in/out");
+        code.setText("animate().alpha(0)");
         click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 egg.animate()
-                        .rotation(360)
+                        .alpha(0)
                         .setDuration(1000)
-                        .setInterpolator(new LinearInterpolator())
+                        .setInterpolator(new AccelerateDecelerateInterpolator())
                         .setListener(new Animator.AnimatorListener() {
                             @Override
                             public void onAnimationStart(Animator animator) {
@@ -31,7 +32,7 @@ public class RotateFragment extends BaseFragment {
                             @Override
                             public void onAnimationEnd(Animator animator) {
                                 click.setEnabled(true);
-                                egg.setRotation(0);
+                                egg.animate().setStartDelay(1000).alpha(1);
                             }
 
                             @Override

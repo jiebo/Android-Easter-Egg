@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.tijiebo.easteregg.Fragments.AlphaFragment;
 import com.tijiebo.easteregg.Fragments.RotateFragment;
 
 import java.util.ArrayList;
@@ -89,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
         private void initialiseFragments() {
             this.fragments = new ArrayList<>();
             fragments.add(new RotateFragment());
+            fragments.add(new AlphaFragment());
         }
 
         @Override
