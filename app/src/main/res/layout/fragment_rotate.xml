@@ -23,11 +23,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:text="animate().rotate()"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
+        android:id="@+id/egg"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:src="@drawable/easter_egg"
@@ -37,6 +37,7 @@
         app:layout_constraintDimensionRatio="1:2"/>
 
     <Button
+        android:id="@+id/click_here_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Click here"
