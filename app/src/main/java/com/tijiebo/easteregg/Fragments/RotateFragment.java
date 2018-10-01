@@ -16,7 +16,6 @@ import com.tijiebo.easteregg.R;
 public class RotateFragment extends Fragment {
 
     private View click;
-    private TextView code;
     private View egg;
 
     @Nullable
@@ -28,11 +27,12 @@ public class RotateFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        TextView code = view.findViewById(R.id.code);
+        code.setText("animate().rotation(360).setDuration(1000);");
+
         click = view.findViewById(R.id.click_here_btn);
-        code = view.findViewById(R.id.code);
         egg = view.findViewById(R.id.egg);
 
-        code.setText("animate().rotation(360).setDuration(1000)");
         click.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
