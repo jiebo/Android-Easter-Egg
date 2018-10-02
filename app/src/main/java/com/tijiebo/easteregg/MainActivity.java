@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.tijiebo.easteregg.Fragments.AlphaFragment;
 import com.tijiebo.easteregg.Fragments.RotateFragment;
+import com.tijiebo.easteregg.Fragments.ToastFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,45 +38,13 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        for (EasterEggs easterEgg : EasterEggs.values()) {
+            tabLayout.addTab(tabLayout.newTab().setText(easterEgg.mTitleRes));
+        }
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
-    }
-
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        private static final String ARG_SECTION_NUMBER = "section_number";
-
-        public PlaceholderFragment() {
-        }
-
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-            return rootView;
-        }
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -91,26 +60,27 @@ public class MainActivity extends AppCompatActivity {
             this.fragments = new ArrayList<>();
             fragments.add(new RotateFragment());
             fragments.add(new AlphaFragment());
+            fragments.add(new ToastFragment());
         }
 
         @Override
         public Fragment getItem(int position) {
-            if (position < fragments.size())
-                return fragments.get(position);
-            return PlaceholderFragment.newInstance(position + 1);
+            return fragments.get(position);
         }
 
         @Override
         public int getCount() {
-            return 3;
+            return EasterEggs.values().length;
         }
     }
 
     public enum EasterEggs {
-        ROTATE(R.string.title_rotate);
+        ROTATE(R.string.title_rotate),
+        ALPHA(R.string.title_alpha),
+        TOAST(R.string.title_toast);
 
-        private @StringRes int mTitleRes;
-        private @LayoutRes int mLayoutRes;
+        private @StringRes
+        int mTitleRes;
 
         EasterEggs(@StringRes int mTitleRes) {
             this.mTitleRes = mTitleRes;
