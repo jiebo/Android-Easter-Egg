@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.tijiebo.easteregg.Fragments.AlphaFragment;
+import com.tijiebo.easteregg.Fragments.PopupFragment;
 import com.tijiebo.easteregg.Fragments.RotateFragment;
 import com.tijiebo.easteregg.Fragments.ToastFragment;
 
@@ -61,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             fragments.add(new RotateFragment());
             fragments.add(new AlphaFragment());
             fragments.add(new ToastFragment());
+            fragments.add(new PopupFragment());
         }
 
         @Override
@@ -77,7 +79,8 @@ public class MainActivity extends AppCompatActivity {
     public enum EasterEggs {
         ROTATE(R.string.title_rotate),
         ALPHA(R.string.title_alpha),
-        TOAST(R.string.title_toast);
+        TOAST(R.string.title_toast),
+        POPUP(R.string.title_popup);
 
         private @StringRes
         int mTitleRes;

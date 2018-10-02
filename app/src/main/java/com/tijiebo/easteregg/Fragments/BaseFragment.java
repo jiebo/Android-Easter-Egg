@@ -3,6 +3,7 @@ package com.tijiebo.easteregg.Fragments;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.TextView;
 
 import com.tijiebo.easteregg.R;
 
-public class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment {
 
     protected View click;
     protected View egg;
@@ -32,5 +33,15 @@ public class BaseFragment extends Fragment {
         egg = view.findViewById(R.id.egg);
         description = view.findViewById(R.id.description);
         code = view.findViewById(R.id.code);
+
+        click.setOnClickListener(getOnClickListener());
+        description.setText(getDescriptionStringRes());
+        code.setText(getCodeStringRes());
     }
+
+    protected abstract View.OnClickListener getOnClickListener();
+
+    protected abstract @StringRes int getCodeStringRes();
+
+    protected abstract @StringRes int getDescriptionStringRes();
 }

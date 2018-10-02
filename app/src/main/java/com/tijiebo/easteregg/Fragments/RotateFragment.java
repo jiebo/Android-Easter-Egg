@@ -1,21 +1,16 @@
 package com.tijiebo.easteregg.Fragments;
 
 import android.animation.Animator;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
+
+import com.tijiebo.easteregg.R;
 
 public class RotateFragment extends BaseFragment {
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        description.setText("Wanted to add this effect to one of our form icons. Don't forget to set the rotation back to 0");
-        code.setText("animate().rotation(360)");
-        click.setOnClickListener(new View.OnClickListener() {
+    protected View.OnClickListener getOnClickListener() {
+        return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 egg.animate()
@@ -46,6 +41,16 @@ public class RotateFragment extends BaseFragment {
                         });
                 click.setEnabled(false);
             }
-        });
+        };
+    }
+
+    @Override
+    protected int getCodeStringRes() {
+        return R.string.code_rotate;
+    }
+
+    @Override
+    protected int getDescriptionStringRes() {
+        return R.string.description_rotate;
     }
 }

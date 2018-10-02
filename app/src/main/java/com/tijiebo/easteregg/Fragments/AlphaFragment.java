@@ -1,22 +1,16 @@
 package com.tijiebo.easteregg.Fragments;
 
 import android.animation.Animator;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+
+import com.tijiebo.easteregg.R;
 
 public class AlphaFragment extends BaseFragment {
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        description.setText("Fade in/out");
-        code.setText("animate().alpha(0)");
-        click.setOnClickListener(new View.OnClickListener() {
+    protected View.OnClickListener getOnClickListener() {
+        return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 egg.animate()
@@ -47,6 +41,16 @@ public class AlphaFragment extends BaseFragment {
                         });
                 click.setEnabled(false);
             }
-        });
+        };
+    }
+
+    @Override
+    protected int getCodeStringRes() {
+        return R.string.code_alpha;
+    }
+
+    @Override
+    protected int getDescriptionStringRes() {
+        return R.string.description_alpha;
     }
 }

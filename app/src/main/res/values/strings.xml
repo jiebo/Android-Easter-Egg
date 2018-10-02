@@ -7,6 +7,18 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="title_rotate">Rotate</string>
+    <string name="code_rotate">animate().rotation(360)</string>
+    <string name="description_rotate">Wanted to add this effect to one of our form icons. Don\'t forget to set the rotation back to 0</string>
+
     <string name="title_alpha">Alpha</string>
+    <string name="code_alpha">animate().alpha(0)</string>
+    <string name="description_alpha">Fade in/out</string>
+
     <string name="title_toast">Toast</string>
+    <string name="code_toast">Toast.makeText()</string>
+    <string name="description_toast">Display a Toast</string>
+
+    <string name="title_popup">Popup</string>
+    <string name="code_popup">AlertDialog.Builder().show()</string>
+    <string name="description_popup"></string>
 </resources>
