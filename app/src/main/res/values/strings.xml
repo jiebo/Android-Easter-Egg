@@ -21,4 +21,8 @@
     <string name="title_popup">Popup</string>
     <string name="code_popup">AlertDialog.Builder().show()</string>
     <string name="description_popup"></string>
+
+    <string name="title_clipboard">Clipboard</string>
+    <string name="code_clipboard"></string>
+    <string name="description_clipboard"></string>
 </resources>
