@@ -31,6 +31,10 @@
     <string name="description_translate">You can choose to move by <i>x</i> pixels (translationYBy) or set the pixel position (translationY)</string>
 
     <string name="title_tint">Tint</string>
-    <string name="code_tint">ImageView.setColorFilter()</string>
-    <string name="description_tint">Add a tint on your imageView</string>
+    <string name="code_tint"><i>ImageView</i>.setColorFilter()</string>
+    <string name="description_tint">Add a tint on your imageView. Take note of the tintMode, i.e., how you wanna add your tint onto your image</string>
+
+    <string name="title_replace">Replace</string>
+    <string name="code_replace"><i>ImageView</i>.setImageResource()</string>
+    <string name="description_replace">Replace your image. There are other similar methods that do the same thing</string>
 </resources>

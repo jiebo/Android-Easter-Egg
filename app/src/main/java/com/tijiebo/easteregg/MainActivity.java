@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.tijiebo.easteregg.Fragments.AlphaFragment;
 import com.tijiebo.easteregg.Fragments.ClipboardFragment;
 import com.tijiebo.easteregg.Fragments.PopupFragment;
+import com.tijiebo.easteregg.Fragments.ReplaceFragment;
 import com.tijiebo.easteregg.Fragments.RotateFragment;
 import com.tijiebo.easteregg.Fragments.TintFragment;
 import com.tijiebo.easteregg.Fragments.ToastFragment;
@@ -69,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             fragments.add(new ClipboardFragment());
             fragments.add(new TranslateFragment());
             fragments.add(new TintFragment());
+            fragments.add(new ReplaceFragment());
         }
 
         @Override
@@ -89,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
         POPUP(R.string.title_popup),
         CLIPBOARD(R.string.title_clipboard),
         TRANSLATE(R.string.title_translate),
-        TINT(R.string.title_tint);
+        TINT(R.string.title_tint),
+        REPLACE(R.string.title_replace);
 
         private @StringRes
         int mTitleRes;
