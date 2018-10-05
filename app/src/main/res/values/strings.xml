@@ -25,4 +25,8 @@
     <string name="title_clipboard">Clipboard</string>
     <string name="code_clipboard"></string>
     <string name="description_clipboard"></string>
+
+    <string name="title_translate">Translate</string>
+    <string name="code_translate"></string>
+    <string name="description_translate"></string>
 </resources>
