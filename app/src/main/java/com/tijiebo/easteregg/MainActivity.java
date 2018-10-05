@@ -18,6 +18,7 @@ import com.tijiebo.easteregg.Fragments.AlphaFragment;
 import com.tijiebo.easteregg.Fragments.ClipboardFragment;
 import com.tijiebo.easteregg.Fragments.PopupFragment;
 import com.tijiebo.easteregg.Fragments.RotateFragment;
+import com.tijiebo.easteregg.Fragments.TintFragment;
 import com.tijiebo.easteregg.Fragments.ToastFragment;
 import com.tijiebo.easteregg.Fragments.TranslateFragment;
 
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             fragments.add(new PopupFragment());
             fragments.add(new ClipboardFragment());
             fragments.add(new TranslateFragment());
+            fragments.add(new TintFragment());
         }
 
         @Override
@@ -86,7 +88,8 @@ public class MainActivity extends AppCompatActivity {
         TOAST(R.string.title_toast),
         POPUP(R.string.title_popup),
         CLIPBOARD(R.string.title_clipboard),
-        TRANSLATE(R.string.title_translate);
+        TRANSLATE(R.string.title_translate),
+        TINT(R.string.title_tint);
 
         private @StringRes
         int mTitleRes;
