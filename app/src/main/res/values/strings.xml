@@ -20,13 +20,13 @@
 
     <string name="title_popup">Popup</string>
     <string name="code_popup">AlertDialog.Builder().show()</string>
-    <string name="description_popup"></string>
+    <string name="description_popup">Simplest, add a popup</string>
 
     <string name="title_clipboard">Clipboard</string>
-    <string name="code_clipboard"></string>
-    <string name="description_clipboard"></string>
+    <string name="code_clipboard">ClipData.newPlainText()</string>
+    <string name="description_clipboard">This is an interesting one. Add your message to your user\'s clipboard who will then have to paste it somewhere to read it</string>
 
     <string name="title_translate">Translate</string>
-    <string name="code_translate"></string>
-    <string name="description_translate"></string>
+    <string name="code_translate">animate().translationY()</string>
+    <string name="description_translate">You can choose to move by <i>x</i> pixels (translationYBy) or set the pixel position (translationY)</string>
 </resources>
